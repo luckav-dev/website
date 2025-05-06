@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XoXo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/Jacarezinho.png"/>
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Jacarezinho - Portfolio">
+    <!-- CSS para el contador -->
+    <style>
+        .counter-status {
+            display: block;
+            font-size: 10px;
+            opacity: 0.6;
+            margin-top: 2px;
+            color: #7d7d7d;
+            transition: opacity 0.3s;
+        }
+        .counter-status.active {
+            color: #0f0;
+        }
+        .counter-status.error {
+            color: #f00;
+        }
+    </style>
+    <!-- Configuración de audio -->
+    <script>
+        // Crear contexto de audio desde el inicio
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+            try {
+                var audioCtx = new AudioContext();
+                // Activar el contexto de audio
+                audioCtx.resume();
+            } catch(e) {
+                console.error("Error AudioContext", e);
+            }
+        }
+        
+        // Intentar crear una fuente de audio silenciosa para "despertar" el sistema de audio
+        try {
+            var audioElement = new Audio();
+            audioElement.autoplay = true;
+            audioElement.src = 'data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4LjM1LjEwMgAAAAAAAAAAAAAA//OEAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAABAAADQgD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////////////////////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/zUGAAA0gBKhQPQAgAAA0gAAAAAATEFIAB0AAANIAAABARcQCgMx+fn4+f39/f39/v7+/v7+/n5+fn5+fj4+Pj5+Pj5+fj4+Pn5+fn5+fn';
+            audioElement.play().catch(function(err) { console.error("Error audio silencioso", err); });
+        } catch(e) {
+            console.error("Error audio sintético", e);
+        }
+    </script>
+</head>
+<body>
+    <!-- Video de fondo -->
+    <div class="background-video-container" id="videoContainer">
+        <!-- El video se creará mediante JavaScript -->
+    </div>
+    
+    <!-- Efectos de brillo -->
+    <div class="glow"></div>
+    <div class="glow"></div>
+    <div class="glow"></div>
+    <!-- Contenedor de partículas -->
+    <div id="particles-js"></div>
+    
+    <div class="content">
+        <div class="card card-centered">
+            <div class="card-ascii">
+                <img class="card-ascii-img" src="img/4.png" alt="ASCII Art">
+            </div>
+            <div class="card-avatar">
+                <img src="img/3.gif" alt="Avatar">
+            </div>
+            <div class="card-title">
+                <p>XoXo Pistolas</p>
+            </div>
+            <div>
+                <p class="description">FIVEM PLAYER</p>
+                <p class="description2">18 <img style="width: 20px; height: 10px;" src="img/pl.webp" alt="Flag"></p>
+            </div>
+            
+            <!-- Sección de habilidades -->
+            <div class="skills-container">
+                <p class="skills-title">SERVERS</p>
+                <div class="skills-grid">
+                    <div class="skill">Rolas Academy</div>
+                    <div class="skill">Fenix PVP</div>
+                    <div class="skill">DTF</div>
+                    <div class="skill">Goat gg</div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="social-buttons">
+                    <a href="https://discord.com/users/1146819293833613373" target="_blank" class="social-button discord" aria-label="Discord">
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.73,5.17c-1.45-0.66-3-1.14-4.61-1.41c-0.2,0.35-0.43,0.83-0.59,1.2c-1.7-0.25-3.39-0.25-5.06,0 c-0.16-0.37-0.39-0.85-0.59-1.2C7.28,4.03,5.72,4.51,4.27,5.17C1.81,8.96,1.18,12.66,1.53,16.3c1.69,1.26,3.33,2.03,4.95,2.53 c0.4-0.54,0.76-1.12,1.07-1.72c-0.59-0.22-1.15-0.49-1.69-0.81c0.14-0.1,0.28-0.21,0.42-0.31c3.29,1.51,6.86,1.51,10.13,0 c0.14,0.11,0.28,0.21,0.42,0.31c-0.54,0.32-1.1,0.59-1.69,0.81c0.31,0.61,0.67,1.18,1.07,1.72c1.62-0.5,3.26-1.27,4.95-2.53 C22.67,12.25,21.82,8.6,19.73,5.17z M8.62,14.77c-0.96,0-1.76-0.89-1.76-1.98s0.77-1.98,1.76-1.98c0.98,0,1.78,0.89,1.76,1.98 C10.38,13.89,9.59,14.77,8.62,14.77z M15.38,14.77c-0.97,0-1.76-0.89-1.76-1.98s0.78-1.98,1.76-1.98s1.77,0.89,1.76,1.98 C17.14,13.89,16.35,14.77,15.38,14.77z"/>
+                        </svg>
+                    </a>
+                    <a href="https://discord.gg/WxGwKwKja9" target="_blank" class="social-button jacarezinho" aria-label="Jacarezinho">
+                        <img src="img/Jacarezinho.png" alt="Jacarezinho" class="jacarezinho-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <!-- Sección de HGs (Highlights) mejorada -->
+    <div class="highlights-section">
+        <div class="hgs-container">
+            <p class="hgs-title">Highlights</p>
+            <p class="hgs-subtitle">Mis mejores momentos en FiveM</p>
+            
+            <div class="hgs-grid">
+                <a href="https://www.youtube.com/watch?v=dNRSHJTBLRI" target="_blank" class="hg-item-link">
+                    <div class="hg-item">
+                        <div class="hg-thumbnail">
+                            <img src="https://i9.ytimg.com/vi_webp/dNRSHJTBLRI/mq1.webp?sqp=COSy6MAG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFIgTihlMA8=&rs=AOn4CLCW-OE6jUHoWFRV9efD93JBGDK5QQ" alt="O Melhor Hg Do Fivem ❤️+ 💭    ">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="hg-content">
+                            <h3 class="hg-title">O Melhor Hg Do Fivem ❤️+ 💭</h3>
+                            <p class="hg-description">HG en diferentes servidores</p>
+                            <div class="hg-meta">
+                                <span class="hg-date">15/05/2023</span>
+                                <span class="hg-server">RA ACADEMY + FIRE </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=3oTcrOhMSeM" target="_blank" class="hg-item-link">
+                    <div class="hg-item">
+                        <div class="hg-thumbnail">
+                            <img src="https://img.youtube.com/vi/3oTcrOhMSeM/maxresdefault.jpg" alt="Hg 1 @luckav #fivemplayer">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="hg-content">
+                            <h3 class="hg-title">Hg 1 @luckav #fivemplayer</h3>
+                            <p class="hg-description">HG en Fire Evolution matando a bambys en rola</p>
+                            <div class="hg-meta">
+                                <span class="hg-date">22/06/2023</span>
+                                <span class="hg-server">FIRE EVOLUTION</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="highlights-cta">
+                <p>¿Quieres ver más highlights?</p>
+                <a href="https://www.youtube.com/@luck_av_" target="_blank" class="highlights-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+                    Ver mi canal
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Espaciador para permitir más desplazamiento -->
+    <div class="page-spacer"></div>
+    
+    <!-- Añadir un texto informativo sobre el control de audio -->
+    <div class="audio-control-info">
+        Presiona <span class="key-highlight">ESPACIO</span> para activar/desactivar música
+    </div>
+
+    <!-- Botón de audio para móviles -->
+    <button id="audioToggleButton" class="audio-toggle-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="audio-icon muted">
+            <path class="volume-on" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            <path class="volume-off" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+        </svg>
+    </button>
+    
+    <!-- Contador de visitas mejorado -->
+    <div class="visitor-counter-container">
+        <div class="visitor-title">Visitantes</div>
+        <div id="visitorCount">...</div>
+        <div id="counterStatus" class="counter-status"></div>
+    </div>
+    
+    <!-- Indicador de desplazamiento -->
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Script para crear el video con retraso de 2 segundos
+        setTimeout(function() {
+            var container = document.getElementById('videoContainer');
+            if (container) {
+                // Crear elemento de video
+                var video = document.createElement('video');
+                video.id = 'backgroundVideo';
+                video.src = 'audio/Video.mp4';
+                video.autoplay = true;
+                video.loop = true;
+                video.playsinline = true;
+                video.muted = true; // Silenciado para visualización
+                
+                // Agregar al DOM
+                container.appendChild(video);
+                
+                // Agregar overlay
+                var overlay = document.createElement('div');
+                overlay.className = 'background-overlay';
+                container.appendChild(overlay);
+                
+                // Reproducir el video
+                video.play();
+            }
+        }, 2000);
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/tilt.js"></script>
+    <script src="js/cursor-effects.js"></script>
+    <!-- Script del contador de visitas -->
+    <script src="visitors.js"></script>
+    <script>
+        // Configuración mejorada de VanillaTilt
+        document.addEventListener('DOMContentLoaded', function() {
+            VanillaTilt.init(document.querySelector(".card"), {
+                max: 10,
+                speed: 400,
+                scale: 1.02,
+                perspective: 1000,
+                reverse: true,
+                easing: "cubic-bezier(0.23, 1, 0.32, 1)",
+                glare: true,
+                "max-glare": 0.15,
+                gyroscope: true,
+                gyroscopeMinAngleX: -20,
+                gyroscopeMaxAngleX: 20,
+                gyroscopeMinAngleY: -20,
+                gyroscopeMaxAngleY: 20
+            });
+        });
+    </script>
+</body>
+</html>
